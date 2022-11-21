@@ -12,6 +12,8 @@ cockpit/include/*
 !cockpit/excelexport-ta.php
 psd/
 test.php
+concept.html
+testcart.php
 video/
 images/
 upload/
