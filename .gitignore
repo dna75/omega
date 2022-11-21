@@ -2,7 +2,6 @@
 cockpit/*
 !cockpit/userpages/
 !cockpit/ajax/
-index.html
 !cockpit/include
 cockpit/include/*
 !cockpit/include/get_tree.func.php
