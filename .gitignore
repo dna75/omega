@@ -11,12 +11,13 @@ cockpit/include/*
 !cockpit/excelexport.php
 !cockpit/excelexport-ta.php
 psd/
-test.php
-concept.html
-testcart.php
 video/
 images/
 upload/
+
+test.php
+concept.html
+testcart.php
 
 git
 .DS_Store

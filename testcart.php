@@ -95,7 +95,6 @@
 			});
 		});
 
-
 		$("#datepicker2, #datepicker").bind("change keyup", function() {
 			let date1 = new Date(document.getElementById("alt-date").value);
 			let date2 = new Date(document.getElementById("alt-date2").value);
