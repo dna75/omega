@@ -2,7 +2,7 @@
 
 $dayPrice = 50;
 $weekPrice = 20;
-$mothPrice = 10;
+$monthPrice = 10;
 $weekendPrice = 40;
 
 $days = $_GET['dayNumber'];
@@ -14,24 +14,23 @@ foreach ($days as $day) {
 }
 
 // difference start and end date in minutes
-$datetime1 = new DateTime($_GET['start'] . ' ' . $_GET['startTime']);
-$datetime2 = new DateTime($_GET['end'] . ' ' . $_GET['endTime']);
+$datetime1 = $_GET['start'] . ' ' . $_GET['startTime'];
+$datetime2 = $_GET['end'] . ' ' . $_GET['endTime'];
 
 // time difference in minutes
-$interval = $datetime1->diff($datetime2);
-$minutes = $interval->format('%i');
-$hours = $interval->format('%h');
-$rentaldays = $interval->format('%d');
-$rentalHours = $hours + ($rentaldays * 24);
-$minutes = $minutes + ($rentalHours * 60);
-$totalRentalDays = ceil($minutes / 60 / 24);
+$start_datetime = new DateTime($datetime1);
+$diff = $start_datetime->diff(new DateTime($datetime2));
+$total_minutes = ($diff->days * 24 * 60);
+$total_minutes += ($diff->h * 60);
+$total_minutes += $diff->i;
+$totalRentalDays = ceil($total_minutes / 1440);
 
 // trim array show only 2 items
 $dayNumbers = array_slice($dayNumbers, 0, $totalRentalDays);
 
+// Cout the number of days
 $daycount = count($days);
 
-// print_r($dayNumbers);
 
 // select saterday and sunday from array
 $weekend = array_intersect($days, array(0, 6));
@@ -74,7 +73,7 @@ if ($totalRentalDays >= 7 && $totalRentalDays <= 29) {
     echo 'Weekprijs: ' . $total;
 }
 if ($totalRentalDays >= 30) {
-    $total = $totalRentalDays * $mothPrice;
+    $total = $totalRentalDays * $monthPrice;
     echo 'Maandprijs: ' . $total;
 }
 

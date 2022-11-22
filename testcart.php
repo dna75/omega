@@ -44,7 +44,7 @@
 			$currentTime += $step * 60;
 		}
 		foreach ($times as $time) {
-			$output .= '<option value="' . $time . ':00">' . $time . '</option>';
+			$output .= '<option value="' . $time . '">' . $time . '</option>';
 		}
 		return $output;
 	}
