@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Bootstrap demo</title>
+	<title>Reken demo</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
 	<link rel="stylesheet" href="/resources/demos/style.css" />
@@ -56,25 +56,30 @@
 
 		<p>Start: <input type="text" name="startShow" id="datepicker" /></p>
 		<input type="hidden" name="start" id="alt-date" />
+		<label>Start tijd:</label>
 		<select name="startTime" id="startTime">
 			<?php echo dropdown('09:00', '18:00'); ?>
 		</select>
 
+		<br><br>
 		<p>Einde: <input type="text" name="endShow" id="datepicker2" /></p>
 		<input type="hidden" name="end" id="alt-date2" />
+
+		<label>Eind tijd:</label>
 		<select name="endTime" id="endTime">
 			<?php echo dropdown('09:00', '18:00'); ?>
 		</select>
 
-		<p>Dagen: <input type="hidden" name="days" id="days" /></p>
-		<p>Dag nummer <input type="hidden" name="dayNumber" id="dayNumber" /></p>
+		<input type="hidden" name="days" id="days" />
+		<input type="hidden" name="dayNumber" id="dayNumber" />
 	</form>
 	<!-- #endregion main -->
 
-	<input type="text" id="totalSum" value="100" onchange="updateTotal()" />
-	<div id="total">Total</div>
+	<input type="hidden" id="totalSum" value="100" onchange="updateTotal()" />
 
-	<div id="result" style="border: 3px solid red; padding:19px;">RESULT DIV</div>
+	<div id="hidden">Total</div>
+
+	<div id="result" style="border: 3px solid red; padding:19px;">RESULT</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
