@@ -50,7 +50,7 @@ echo '<br>';
 ?>
 <h3 style="margin-top:30px;">Prijzen</h3>
 <?php
-if ($daycount >= 1 && $daycount <= 6) {
+if ($totalRentalDays >= 1 && $totalRentalDays <= 6) {
 
     // if array contains days 0 and 6
     if (in_array(0, $dayNumbers) && in_array(6, $dayNumbers)) {
@@ -65,16 +65,15 @@ if ($daycount >= 1 && $daycount <= 6) {
         $total = $totalPriceWeekend + $totalPriceDays;
         echo $total;
     } else {
-
         $total = $totalRentalDays * $dayPrice;
         echo 'Totaal: ' . $total;
     }
 }
-if ($daycount >= 7 && $daycount <= 29) {
+if ($totalRentalDays >= 7 && $totalRentalDays <= 29) {
     $total = $totalRentalDays * $weekPrice;
     echo 'Weekprijs: ' . $total;
 }
-if ($daycount >= 30) {
+if ($totalRentalDays >= 30) {
     $total = $totalRentalDays * $mothPrice;
     echo 'Maandprijs: ' . $total;
 }
