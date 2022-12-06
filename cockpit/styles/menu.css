@@ -1,0 +1,51 @@
+.menu { 		
+	font-size:13px;
+
+}
+
+.menu ul {	
+			list-style : none;
+			margin-left : 0;
+			display : block;
+/* 			min-width : 180px; */
+}
+
+.menu i {
+			border : none;
+			margin : 3px;
+			
+}
+.menu  li {	
+			background-color:#fff;
+			list-style : none;
+			margin : 0;
+			border : 1px solid #D1D1D1;
+			display : block;
+			line-height : 45px;
+			margin-left: -39px !important;
+}
+
+.menu0 li {
+			background-color :#fbfbfb;
+			border : 0px solid #E3E3E3;
+			border-top : 1px solid #D1D1D1;
+}
+
+.menu1 li {
+			background-color : #E3E3E3;
+			border : 0px solid #E3E3E3;
+			border-top : 1px solid #D1D1D1;
+			
+}
+
+.menu2 li {
+			background-color : #F2F2F2;
+			border : 0px solid #E3E3E3;
+			border-top : 1px solid #D1D1D1;
+}
+
+.padding {	
+			padding-left : 10px;
+}
+
+.test {font-size:2px !important;}
