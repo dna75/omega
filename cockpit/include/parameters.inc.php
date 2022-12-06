@@ -1,3 +1,0 @@
-<?
-$devURL = "Nanne";
-?>
