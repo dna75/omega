@@ -1,3 +1,47 @@
+<?php
+if ($_SERVER['REMOTE_ADDR'] == '82.172.63.44') {
+	$reportErrors = 'on';
+} else {
+	$reportErrors = 'on';
+}
+
+ini_set('display_errors', $reportErrors);
+error_reporting(E_ALL);
+
+ob_start();
+include "./cockpit/include/config.inc.php";
+//include "./functions/func.inc.php";
+
+$db = new mysqli(DB_HOST, DB_LOGIN, DB_PASSWORD, DB_DB);
+
+// Check connection
+if ($db->connect_errno) {
+	die('Sorry we have some database problems');
+}
+
+include($develop . '/include/language.class.php');
+
+$lang = (isset($_GET['lang'])) ? $_GET['lang'] : '';
+$language = new Language($lang);
+$language->multilingual_site = false;
+
+require_once($develop . '/include/CustomPages/CustomPages.class.php');
+
+setlocale(
+	LC_ALL,
+	'Dutch_Netherlands',
+	'Dutch',
+	'nl_NL',
+	'nl',
+	'nl_NL.ISO8859-1',
+	'nl_NL.UTF-8',
+	'nld_nld',
+	'nld',
+	'nld_NLD',
+	'NL_nl'
+);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,15 +64,9 @@
 	€ 40,- per weekenddag (zaterdag en zondag)<br>
 	Alle prijzen zijn de prijzen per dag.</p>
 
-	<?
-	$a = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-	// get values 1 and 5 from array
-	$b = array_intersect($a, array(1, 5));
-	// print_r($b);
-
-	// subtract $b from array $a
-	$c = array_diff($a, $b);
-	// print_r($c);
+	<? // times
+	$start = '09:00';
+	$end = '18:00';
 	?>
 
 	<?
@@ -58,7 +96,7 @@
 		<input type="hidden" name="start" id="alt-date" />
 		<label>Start tijd:</label>
 		<select name="startTime" id="startTime">
-			<?php echo dropdown('09:00', '18:00'); ?>
+			<?php echo dropdown($start, $end); ?>
 		</select>
 
 		<br><br>
@@ -67,7 +105,7 @@
 
 		<label>Eind tijd:</label>
 		<select name="endTime" id="endTime">
-			<?php echo dropdown('09:00', '18:00'); ?>
+			<?php echo dropdown($start, $end); ?>
 		</select>
 
 		<input type="hidden" name="days" id="days" />
@@ -87,15 +125,38 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
+
+	// disabled days datepicker
 	<script>
-		// dynamic price update
-		function updatePrice() {
-			var price = 0;
-			var qty = document.getElementById("qty").value;
-			var price = document.getElementById("price").value;
-			var total = qty * price;
-			document.getElementById("totalSum").value = total;
-			document.getElementById("total").innerHTML = total;
+		// Check disabled times
+		$("#datepicker").bind("change keyup", function() {
+			let d = new Date(document.getElementById("alt-date").value),
+				month = '' + (d.getMonth() + 1),
+				day = '' + d.getDate(),
+				year = d.getFullYear();
+			date = [year, month, day].join('-');
+
+			if (date == "2022-11-30") { // Check if times are disabled for this date
+				// array disabled times
+				let times = ["09:00", "09:15"];
+				$("#startTime option").each(function() {
+					if ($.inArray($(this).val(), times) != -1) {
+						$(this).remove();
+					}
+				});
+			}
+			if (date != "2022-11-30") { // If times are not disabled for this date add times back to dropdown
+				$("#startTime").html('<?php echo dropdown($start, $end); ?>');
+			}
+		});
+
+		// datepicker disable specific dates
+		var disabledDays = ["2022-11-28", "2022-11-29"];
+
+		// pass disabled dates array to datepicker
+		function disabled(date) {
+			var string = jQuery.datepicker.formatDate("yy-mm-dd", date);
+			return [disabledDays.indexOf(string) == -1];
 		}
 
 		// Datepicker Start / End date
@@ -118,6 +179,7 @@
 				changeMonth: true,
 				changeYear: true,
 				minDate: +2,
+				beforeShowDay: disabled,
 			});
 		});
 

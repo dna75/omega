@@ -1,0 +1,33 @@
+.treeview, .treeview ul {
+	list-style: none;
+}
+
+.treeview .hitarea {
+	background: url(./../images/treeview/treeview-default.png) -64px -25px no-repeat;
+	height: 14px;
+	width: 14px;
+	margin-top : 10px;
+	margin-right : 5px;
+	float: right;
+	cursor: pointer;
+}
+/* fix for IE6 */
+* html .hitarea {
+	display: inline;
+	float:none;
+}
+
+
+.treeview a.selected {
+	background-color: #eee;
+	
+}
+
+#treecontrol { display: none; }
+
+
+.treeview .hover { color: red; cursor: pointer; }
+
+.treeview li.collapsable, .treeview li.expandable { background-position: 0 -176px; }
+
+.treeview .expandable-hitarea { background-position: -80px -3px; }

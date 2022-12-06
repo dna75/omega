@@ -1,0 +1,313 @@
+body {
+	color: #666;
+	/* background:#fcfcfc; */
+	background: #fff;
+	font-size: 13px;
+	font-family: "Hind", sans-serif;
+	font-weight: 300;
+}
+
+a:link,
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	color: #b70032;
+}
+
+/* Algemeen */
+.bewerken {
+	/* background: #2e3140; */
+	padding: 20px 16px 25px 16px;
+	color: #2e3140;
+	font-size: 19px;
+	text-transform: uppercase;
+}
+
+#password {
+	-webkit-text-security: disc;
+	-moz-text-security: disc;
+	text-security: disc;
+}
+
+.bewerkenback {
+	background: rgba(237, 237, 237, 1);
+	background: -moz-linear-gradient(top, rgba(237, 237, 237, 1) 0%, rgba(237, 237, 237, 1) 1%, rgba(246, 246, 246, 1) 47%, rgba(255, 255, 255, 1) 89%, rgba(255, 255, 255, 1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(237, 237, 237, 1)), color-stop(1%, rgba(237, 237, 237, 1)), color-stop(47%, rgba(246, 246, 246, 1)), color-stop(89%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(255, 255, 255, 1)));
+	background: -webkit-linear-gradient(top, rgba(237, 237, 237, 1) 0%, rgba(237, 237, 237, 1) 1%, rgba(246, 246, 246, 1) 47%, rgba(255, 255, 255, 1) 89%, rgba(255, 255, 255, 1) 100%);
+	background: -o-linear-gradient(top, rgba(237, 237, 237, 1) 0%, rgba(237, 237, 237, 1) 1%, rgba(246, 246, 246, 1) 47%, rgba(255, 255, 255, 1) 89%, rgba(255, 255, 255, 1) 100%);
+	background: -ms-linear-gradient(top, rgba(237, 237, 237, 1) 0%, rgba(237, 237, 237, 1) 1%, rgba(246, 246, 246, 1) 47%, rgba(255, 255, 255, 1) 89%, rgba(255, 255, 255, 1) 100%);
+	background: linear-gradient(to bottom, rgba(237, 237, 237, 1) 0%, rgba(237, 237, 237, 1) 1%, rgba(246, 246, 246, 1) 47%, rgba(255, 255, 255, 1) 89%, rgba(255, 255, 255, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff', GradientType=0 );
+	-webkit-box-shadow: 2px 2px 5px 0px rgba(143, 143, 143, 1);
+	-moz-box-shadow: 2px 2px 5px 0px rgba(143, 143, 143, 1);
+	box-shadow: 2px 2px 5px 0px rgba(143, 143, 143, 1);
+}
+
+.header {
+	background-color: #2e2e2c;
+	border-bottom: solid 5px #e21836;
+	margin-bottom: 10px;
+}
+
+/* stijl verwijder en verplaats icons menu */
+.verwijder {
+	color: #f10808;
+}
+.pijl {
+	color: #00a7ff;
+}
+
+/* velden aanpassen pagina */
+.links {
+	text-align: left !important;
+	font-weight: 400;
+	font-size: 15px !important;
+	padding-right: 0px !important;
+}
+
+/* Header opmaak */
+.button_font {
+	font-size: 12px;
+	line-height: 2.3;
+	margin-bottom: 10px;
+}
+
+/* Custom button Red */
+.btn-red {
+	color: #ffffff;
+	background-color: #d10f0f;
+	border-color: #990e2a;
+}
+
+.btn-red:hover,
+.btn-red:focus,
+.btn-red:active,
+.btn-red.active,
+.open .dropdown-toggle.btn-red {
+	color: #ffffff;
+	background-color: #9e1e1e;
+	border-color: #990e2a;
+}
+
+.btn-red:active,
+.btn-red.active,
+.open .dropdown-toggle.btn-red {
+	background-image: none;
+}
+
+.btn-red.disabled,
+.btn-red[disabled],
+fieldset[disabled] .btn-red,
+.btn-red.disabled:hover,
+.btn-red[disabled]:hover,
+fieldset[disabled] .btn-red:hover,
+.btn-red.disabled:focus,
+.btn-red[disabled]:focus,
+fieldset[disabled] .btn-red:focus,
+.btn-red.disabled:active,
+.btn-red[disabled]:active,
+fieldset[disabled] .btn-red:active,
+.btn-red.disabled.active,
+.btn-red[disabled].active,
+fieldset[disabled] .btn-red.active {
+	background-color: #d10f0f;
+	border-color: #990e2a;
+}
+
+.btn-red .badge {
+	color: #d10f0f;
+	background-color: #ffffff;
+}
+
+/* BTN Green */
+.btn-green {
+	color: #ffffff;
+	background-color: #75bd92;
+	border-color: #05944f;
+}
+
+.btn-green:hover,
+.btn-green:focus,
+.btn-green:active,
+.btn-green.active,
+.open .dropdown-toggle.btn-green {
+	color: #ffffff;
+	background-color: #44915d;
+	border-color: #05944f;
+}
+
+.btn-green:active,
+.btn-green.active,
+.open .dropdown-toggle.btn-green {
+	background-image: none;
+}
+
+.btn-green.disabled,
+.btn-green[disabled],
+fieldset[disabled] .btn-green,
+.btn-green.disabled:hover,
+.btn-green[disabled]:hover,
+fieldset[disabled] .btn-green:hover,
+.btn-green.disabled:focus,
+.btn-green[disabled]:focus,
+fieldset[disabled] .btn-green:focus,
+.btn-green.disabled:active,
+.btn-green[disabled]:active,
+fieldset[disabled] .btn-green:active,
+.btn-green.disabled.active,
+.btn-green[disabled].active,
+fieldset[disabled] .btn-green.active {
+	background-color: #75bd92;
+	border-color: #05944f;
+}
+
+.btn-green .badge {
+	color: #75bd92;
+	background-color: #ffffff;
+}
+
+/* custom Checkbox */
+.myinput[type="checkbox"]:before {
+	position: relative;
+	display: block;
+	width: 11px;
+	height: 11px;
+	border: 1px solid #808080;
+	content: "";
+	background: #fff;
+}
+.myinput[type="checkbox"]:after {
+	position: relative;
+	display: block;
+	left: 2px;
+	top: -11px;
+	width: 7px;
+	height: 7px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #b3b3b3 #dcddde #dcddde #b3b3b3;
+	content: "";
+	background-image: linear-gradient(135deg, #b1b6be 0%, #fff 100%);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.myinput[type="checkbox"]:checked:after {
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAQAAABuW59YAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAB2SURBVHjaAGkAlv8A3QDyAP0A/QD+Dam3W+kCAAD8APYAAgTVZaZCGwwA5wr0AvcA+Dh+7UX/x24AqK3Wg/8nt6w4/5q71wAAVP9g/7rTXf9n/+9N+AAAtpJa/zf/S//DhP8H/wAA4gzWj2P4lsf0JP0A/wADAHB0Ngka6UmKAAAAAElFTkSuQmCC"), linear-gradient(135deg, #b1b6be 0%, #fff 100%);
+}
+.myinput[type="checkbox"]:disabled:after {
+	-webkit-filter: opacity(0.4);
+}
+.myinput[type="checkbox"]:not(:disabled):checked:hover:after {
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAQAAABuW59YAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAB2SURBVHjaAGkAlv8A3QDyAP0A/QD+Dam3W+kCAAD8APYAAgTVZaZCGwwA5wr0AvcA+Dh+7UX/x24AqK3Wg/8nt6w4/5q71wAAVP9g/7rTXf9n/+9N+AAAtpJa/zf/S//DhP8H/wAA4gzWj2P4lsf0JP0A/wADAHB0Ngka6UmKAAAAAElFTkSuQmCC"), linear-gradient(135deg, #8bb0c2 0%, #fff 100%);
+}
+.myinput[type="checkbox"]:not(:disabled):hover:after {
+	background-image: linear-gradient(135deg, #8bb0c2 0%, #fff 100%);
+	border-color: #85a9bb #92c2da #92c2da #85a9bb;
+}
+.myinput[type="checkbox"]:not(:disabled):hover:before {
+	border-color: #3d7591;
+}
+
+.myinput.large {
+	height: 22px;
+	width: 22px;
+}
+
+.myinput.large[type="checkbox"]:before {
+	width: 20px;
+	height: 20px;
+}
+.myinput.large[type="checkbox"]:after {
+	top: -20px;
+	width: 16px;
+	height: 16px;
+}
+
+.ui-datepicker .ui-datepicker-calendar .ui-state-highlight a {
+	background: #743620 none;
+	color: #fff;
+}
+
+.analyticsResult {
+	font-size: 32px;
+	margin-bottom: 10px;
+}
+
+@media (max-width: 767px) {
+	.soortbezoekers {
+		font-size: 11px !important;
+		min-height: 130px;
+	}
+	.smallstats {
+		font-size: 8px;
+	}
+
+	.analyticsResult {
+		font-size: 14px;
+		margin-bottom: 3px;
+	}
+}
+
+/* Zoom image */
+.zoom {
+	padding: 2px;
+	background-color: white;
+	transition: transform 0.2s; /* Animation */
+	width: 55px;
+	height: 55px;
+	margin: 0 auto;
+}
+
+.zoom:hover {
+	padding: 10px;
+	transform: scale(2.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+/* For equal width with a multi-column dropdown */
+.monospace {
+	font-size: 12pt;
+	font-family: monospace;
+}
+
+/* Hide Div (hideMe) for notifications */
+#hideMe {
+	-moz-animation: cssAnimation 0s ease-in 2s forwards;
+	/* Firefox */
+	-webkit-animation: cssAnimation 0s ease-in 2s forwards;
+	/* Safari and Chrome */
+	-o-animation: cssAnimation 0s ease-in 2s forwards;
+	/* Opera */
+	animation: cssAnimation 0s ease-in 2s forwards;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	position: fixed;
+	top: 55px;
+	right: 20px;
+	width: 190px;
+	z-index: 6000;
+	border-radius: 0px;
+	text-align: center;
+	color: #fff;
+	background-color: rgba(255, 0, 61, 0.89);
+}
+@keyframes cssAnimation {
+	to {
+		width: 0;
+		height: 0;
+		overflow: hidden;
+	}
+}
+@-webkit-keyframes cssAnimation {
+	to {
+		width: 0;
+		height: 0;
+		visibility: hidden;
+	}
+}
+
+.well,
+.btn {
+	border-radius: 0px !important;
+}
