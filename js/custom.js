@@ -145,13 +145,6 @@ scrollTo.click(function (event) {
 	return false;
 });
 
-// setup autocomplete - pulling from locations-autocomplete.js
-//-------------------------------------------------------------------------------
-
-$(".autocomplete-location").autocomplete({
-	lookup: locations,
-});
-
 // Newsletter Form
 //-------------------------------------------------------------------------------
 
