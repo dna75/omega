@@ -22,10 +22,10 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 $enable-negative-margins: true;
 
 @import "../node_modules/bootstrap/scss/bootstrap";
-@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
-@font-face {
-	font-family: visionbold;
-	src: url("../fonts/Vision-Bold.otf") format("opentype");
+// @import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
+// @font-face {
+// 	font-family: visionbold;
+// 	src: url("../fonts/Vision-Bold.otf") format("opentype");
 }
 
 /* Config Colors
