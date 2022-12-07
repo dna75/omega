@@ -1,6 +1,6 @@
 AddDefaultCharset UTF-8
 
-# ModPagespeed off
+ModPagespeed off
 
 Header set X-XSS-Protection "1; mode=block"
 Header set Referrer-Policy "no-referrer-when-downgrade"
