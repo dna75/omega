@@ -59,7 +59,7 @@ setlocale(
 	<link href="/css/animate.css" rel="stylesheet" />
 
 	<!-- Google Font Lato -->
-	<link href="http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic,900italic" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic,900italic" rel="stylesheet" type="text/css" />
 
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
 	<link rel="stylesheet" href="/resources/demos/style.css" />
