@@ -69,15 +69,6 @@ setlocale(
 	$items = new CustomPages('algemeen');
 	$items->fetchOne(1); // je kan ook een id ophalen met: $items->fetchOne(87);
 
-	// OPTIONAL STUFF
-	// $result->filter('gender'        , '!='    , '0');
-	// $result->filter('date_to'    , '>='    , date('d-m-Y', strtotime('-12 hours')));
-	// $result->sort('date_to', true);
-	// $result->random();
-	// $result->reverse();
-	// $result->limit(100);
-	// END OPTIONAL STUFF
-
 	$itemAlgemeen = $items->getResults();
 	?>
 
@@ -113,7 +104,7 @@ setlocale(
 					<!-- <li><a href="#locations" class="nav-link active scroll-to">LOCATIE</a></li> -->
 					<li><a href="#contact" class="nav-link active scroll-to">CONTACT</a></li>
 				</ul>
-				<span class="navbar-text  fw-bold"><span style="font-size:13px;">7 DAGEN P/W BEREIKBAAR VAN 08:00 - 22:00</span><br><i class="fa-light fa-mobile me-1"></i><i class="fa-brands fa-whatsapp me-1" style="color:green;"></i> 06 51 51 90 90</span>
+				<span class="navbar-text  fw-bold"><span style="font-size:13px;">7 DAGEN P/W BEREIKBAAR VAN 08:00 - 22:00</span><br><i class="fa-light fa-mobile me-1"></i><i class="fa-brands fa-whatsapp me-1" style="color:green;"></i> <?= $itemAlgemeen['mobile']; ?></span>
 			</div>
 		</div>
 	</nav>
@@ -574,7 +565,7 @@ setlocale(
 				<div class="col-md-5">
 					<p class="contact-info">
 						Meer informatie of een vraag over de verhuurmogelijkheden? <br />
-						<span class="address"><span class="highlight">Adres: </span><Br>Omega Autoverhuur<br>de Straat 1<br>Leeuwarden </span>
+						<span class="address"><span class="highlight">Adres: </span><Br><?= $itemAlgemeen['companyname']; ?><br><?= $itemAlgemeen['address']; ?><br><? $itemAlgemeen['zipcode']; ?> <?= $itemAlgemeen['city']; ?></span>
 					</p>
 					<p class="contact-info">
 						Neem contact met ons op via:<Br>
