@@ -583,7 +583,7 @@ setlocale(
 						if (!empty($item)) { ?>
 							<br>Maandag t/m vrijdag: <?= $item['mondaytofridayfrom']; ?> - <?= $item['mondaytofridayto']; ?>
 							<br>Zaterdag: <?= $item['saturdayfrom']; ?> - <?= $item['saturdayto']; ?>
-							<br>Zondag: <?= (!empty($item['sundayclosed'])) ? $item['sundayfrom'] . ' - ' . $item['sundayto'] : 'Gesloten'; ?>
+							<br>Zondag: <?= (!isset($item['sundayclosed'])) ? $item['sundayfrom'] . ' - ' . $item['sundayto'] : 'Gesloten'; ?>
 						<? } ?>
 				</div>
 			</div>
