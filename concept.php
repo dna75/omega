@@ -575,7 +575,7 @@ setlocale(
 
 					<p class="contact-info"><span class=" highlight">Openingstijden kantoor:</span>
 						<?
-						$items = new CustomPages('opningstijden');
+						$items = new CustomPages('openingstijden');
 						$items->fetchOne(66); // je kan ook een id ophalen met: $items->fetchOne(87);
 
 						$item = $items->getResults();
