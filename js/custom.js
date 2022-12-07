@@ -1,5 +1,15 @@
 // Custom JS for the Theme
 
+// Equal Heights
+$(function () {
+	$(".item").matchHeight();
+	$(".item1").matchHeight();
+	$(".item2").matchHeight();
+	$(".item3").matchHeight();
+	$(".item4").matchHeight();
+	$(".item5").matchHeight();
+});
+
 // Config
 //-------------------------------------------------------------
 

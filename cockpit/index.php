@@ -6,7 +6,7 @@ define('SPINNERZ_INDEX', TRUE);
 $_COOKIE['CKFINDER_BASE_URL'] = 'http://devtest.nannedijkstra.nl/';
 $_COOKIE['CKFINDER_BASE_DIR'] = '/var/www/vhosts/nannedijkstra.nl/devtest.nannedijkstra.nl/';
 
-ini_set('display_errors', 'on');
+ini_set('display_errors', 'off');
 error_reporting(E_ALL);
 
 include('./include/config.inc.php');

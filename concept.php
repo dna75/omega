@@ -50,28 +50,20 @@ setlocale(
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Car|Rental Landingpage</title>
+	<title>Omega Autoverhuur - Leeuwarden</title>
 
 	<!-- Bootstrap -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+	<link href="/css/styles.min.css" rel="stylesheet" />
 
 	<!-- Bootstrap -->
-	<link href="css/animate.css" rel="stylesheet" />
+	<link href="/css/animate.css" rel="stylesheet" />
 
 	<!-- Google Font Lato -->
 	<link href="http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic,900italic" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" href="css/font-awesome.min.css" />
 
-
-	<link href="css/styles.css" rel="stylesheet" />
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
 	<link rel="stylesheet" href="/resources/demos/style.css" />
 
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/ico/apple-touch-icon-144-precomposed.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/ico/apple-touch-icon-114-precomposed.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/ico/apple-touch-icon-72-precomposed.png" />
-	<link rel="apple-touch-icon-precomposed" href="img/ico/apple-touch-icon-57-precomposed.png" />
-	<link rel="shortcut icon" href="img/ico/favicon.png" />
 
 	<?
 	$items = new CustomPages('algemeen');
@@ -98,7 +90,7 @@ setlocale(
 	$end   = $itemAlgemeen['endrental'];
 	?>
 
-	<!-- Teaser start -->
+	<!-- #region Navbar -->
 	<nav class="navbar fixed-top navbar-expand-lg bg-light">
 		<div class="container">
 			<a class="navbar-brand p-3" href="#top"><img src="/img/logo.svg" style="width: 180px" /></a>
@@ -108,7 +100,7 @@ setlocale(
 			<div class="collapse navbar-collapse" id="navbarText">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a href="#top" class="nav-link active scroll-to">HOME</a></li>
-					<li><a href="#services" class="nav-link scroll-to">DIENSTEN</a></li>
+					<li><a href="#services" class="nav-link scroll-to">OVER ONS</a></li>
 					<li><a href="#vehicles" class="nav-link active scroll-to">VOERTUIGEN</a></li>
 					<!-- <li class="dropdown">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Blog <span class="caret"></span></a>
@@ -118,13 +110,14 @@ setlocale(
 											<li><a href="error404.html">Error 404</a></li>
 										</ul>
 									</li> -->
-					<li><a href="#locations" class="nav-link active scroll-to">LOCATIE</a></li>
+					<!-- <li><a href="#locations" class="nav-link active scroll-to">LOCATIE</a></li> -->
 					<li><a href="#contact" class="nav-link active scroll-to">CONTACT</a></li>
 				</ul>
-				<span class="navbar-text"> BEL 058 123 123 12 </span>
+				<span class="navbar-text  fw-bold"><span style="font-size:13px;">7 DAGEN P/W BEREIKBAAR VAN 08:00 - 22:00</span><br><i class="fa-light fa-mobile me-1"></i><i class="fa-brands fa-whatsapp me-1" style="color:green;"></i> 06 51 51 90 90</span>
 			</div>
 		</div>
 	</nav>
+	<!-- #endregion Navbar -->
 
 	<!-- #region rental top -->
 	<section id="teaser">
@@ -263,53 +256,31 @@ setlocale(
 	<section id="services" class="container">
 		<div class="row">
 			<div class="col-md-12 title">
-				<h2>ONZE DIENSTEN</h2>
-				<span class="underline">&nbsp;</span>
+				<h2 class="title wow fadeInDown animated">WAAROM KIES JIJ VOOR OMEGA AUTOVERHUUR</h2>
+				<span class=" underline">&nbsp;</span>
 			</div>
 
-			<!-- Service Box start -->
-			<div class="col-md-6">
-				<div class="service-box wow fadeInLeft" data-wow-offset="100">
-					<div class="service-icon">+</div>
-					<h3 class="service-title">Lorem ipsum dolor sit</h3>
-					<div class="clearfix"></div>
-					<p class="service-content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed nonumy eirmod tempor invidunt ut labore et dolore magnaed aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
-				</div>
-			</div>
-			<!-- Service Box end -->
+			<?
+			$result = new CustomPages('USP');
+			$result->fetch();
 
-			<!-- Service Box start -->
-			<div class="col-md-6">
-				<div class="service-box wow fadeInRight" data-wow-offset="100">
-					<div class="service-icon">+</div>
-					<h3 class="service-title">Lorem ipsum dolor sit</h3>
-					<div class="clearfix"></div>
-					<p class="service-content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed nonumy eirmod tempor invidunt ut labore et dolore magnaed aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
-				</div>
-			</div>
-			<!-- Service Box end -->
+			// OPTIONAL STUFF
+			$result->filter('active', '!=', '0');
 
-			<!-- Service Box start -->
-			<div class="col-md-6">
-				<div class="service-box wow fadeInLeft" data-wow-offset="100">
-					<div class="service-icon">+</div>
-					<h3 class="service-title">Lorem ipsum dolor sit</h3>
-					<div class="clearfix"></div>
-					<p class="service-content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed nonumy eirmod tempor invidunt ut labore et dolore magnaed aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
-				</div>
-			</div>
-			<!-- Service Box end -->
+			foreach ($result->getResults() as $row) {
+			?>
 
-			<!-- Service Box start -->
-			<div class="col-md-6">
-				<div class="service-box wow fadeInRight" data-wow-offset="100">
-					<div class="service-icon">+</div>
-					<h3 class="service-title">Lorem ipsum dolor sit</h3>
-					<div class="clearfix"></div>
-					<p class="service-content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed nonumy eirmod tempor invidunt ut labore et dolore magnaed aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+				<!-- Service Box start -->
+
+				<div class="col-md-6 item">
+					<div class="service-box wow fadeInLeft item2" data-wow-offset="100">
+						<div class="service-icon">+</div>
+						<div class="item3 service-title" style="height:50px;"><?= $row['title']; ?></div>
+						<div class="clearfix"></div>
+						<p class="service-content item4"><?= word_teaser($row['description'], 60); ?></p>
+					</div>
 				</div>
-			</div>
-			<!-- Service Box end -->
+			<?  } ?>
 		</div>
 	</section>
 	<!-- Services end -->
@@ -356,7 +327,7 @@ setlocale(
 	</section>
 	<!-- #endregion Newsletter end -->
 
-	<!-- Vehicles start -->
+	<!-- #region Vehicles start -->
 	<section id="vehicles" class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -434,13 +405,11 @@ setlocale(
 			<?
 			}
 			?>
-			<!-- Vehicle data end -->
-
-
 		</div>
 	</section>
-	<!-- Vehicles end -->
+	<!-- #endregion Vehicles end -->
 
+	<!-- #region Reviews start -->
 	<section id="reviews" class="wow fadeInUp data-wow-offset=50">
 		<div class="container">
 			<div class="row text-center">
@@ -482,7 +451,7 @@ setlocale(
 			</div>
 		</div>
 	</section>
-	<!-- Reviews end -->
+	<!-- #endregion Reviews end -->
 
 	<!-- Locations start -->
 	<!-- <section id="locations">
@@ -509,7 +478,7 @@ setlocale(
 		</section> -->
 	<!-- Locations end -->
 
-	<!-- Information start -->
+	<!-- #region Information start -->
 	<section id="information" class="container">
 		<!-- Single photo start -->
 		<div class="row wow fadeInLeft" data-wow-offset="100">
@@ -541,7 +510,7 @@ setlocale(
 		</div>
 		<!-- Video end -->
 	</section>
-	<!-- Information end -->
+	<!-- #endregion Information end -->
 
 	<!-- Partners start -->
 	<!-- <section id="partners" class="wow fadeIn" data-wow-offset="50">
@@ -569,47 +538,59 @@ setlocale(
 		</section> -->
 	<!-- Partners end -->
 
-	<!-- Contact start -->
+	<!-- #region Contact start -->
 	<section id="contact" class="container wow bounceInUp" data-wow-offset="50">
 		<div class="row">
 			<div class="col-md-12">
 				<h2>Neem contact met ons op</h2>
 			</div>
+			<div class="row">
+				<div class="col-md-7">
+					<form action="#" method="post" id="contact-form" name="contact-form">
+						<input type="hidden" name="action" value="Verstuur" />
 
-			<div class="col-md-12 col-xs-12 pull-left">
-				<p class="contact-info">
-					Meer informatie of een vraag over de verhuurmogelijkheden? <br />
-					<span class="address"><span class="highlight">Adres: </span> Omega Autoverhuur / de Straat 1 Leeuwarden </span>
-				</p>
-				<form action="#" method="post" id="contact-form" name="contact-form">
-					<input type="hidden" name="action" value="Verstuur" />
 
-					<div class="alert hidden" id="contact-form-msg"></div>
+						<div class="form-group">
+							<input type="text" class="form-control first-name text-field" name="first-name" placeholder="Voornaam" />
+							<input type="text" class="form-control last-name text-field" name="last-name" placeholder="Achternaam" />
+							<div class="clearfix"></div>
+						</div>
 
-					<div class="form-group">
-						<input type="text" class="form-control first-name text-field" name="first-name" placeholder="Voornaam" />
-						<input type="text" class="form-control last-name text-field" name="last-name" placeholder="Achternaam" />
-						<div class="clearfix"></div>
-					</div>
+						<div class="form-group">
+							<input type="tel" class="form-control telephone text-field" name="telephone" placeholder="Telefoon" />
+						</div>
 
-					<div class="form-group">
-						<input type="tel" class="form-control telephone text-field" name="telephone" placeholder="Telefoon" />
-					</div>
+						<div class="form-group">
+							<input type="email" class="form-control email text-field" name="email" placeholder="Email" />
+						</div>
 
-					<div class="form-group">
-						<input type="email" class="form-control email text-field" name="email" placeholder="Email" />
-					</div>
+						<div class="form-group">
+							<textarea class="form-control message" name="message" placeholder="Bericht / vraag"></textarea>
+						</div>
 
-					<div class="form-group">
-						<textarea class="form-control message" name="message" placeholder="Bericht / vraag"></textarea>
-					</div>
+						<input type="submit" class="btn submit-message" name="submit-message" value="Verstuur" />
+					</form>
+				</div>
+				<div class="col-md-5">
+					<p class="contact-info">
+						Meer informatie of een vraag over de verhuurmogelijkheden? <br />
+						<span class="address"><span class="highlight">Adres: </span><Br>Omega Autoverhuur<br>de Straat 1<br>Leeuwarden </span>
+					</p>
+					<p class="contact-info">
+						Neem contact met ons op via:<Br>
+						<i class="fa-light fa-mobile me-2"></i><i class="me-2 fa-brands fa-whatsapp"></i> 06 51 51 90 90<br>
+						7 DAGEN P/W BEREIKBAAR VAN 08:00 - 22:00
+					</p>
 
-					<input type="submit" class="btn submit-message" name="submit-message" value="Verstuur" />
-				</form>
+					<p class="contact-info"><span class=" highlight">Openingstijden kantoor:</span>
+						<br>Maandag t/m vrijdag: 08:00 - 17:00
+						<br>Zaterdag: 08:00 - 12:00
+						<br>Zondag: Gesloten
+				</div>
 			</div>
 		</div>
 	</section>
-	<!-- Contact end -->
+	<!-- #endregion Contact end -->
 
 	<a href="#" class="scrollup">ScrollUp</a>
 
@@ -717,87 +698,7 @@ setlocale(
 									<select name="age" id="age">
 										<option value="18">18</option>
 										<option value="19">19</option>
-										<option value="20">20</option>
-										<option value="21">21</option>
-										<option value="22">22</option>
-										<option value="23">23</option>
-										<option value="24">24</option>
-										<option value="25">25</option>
-										<option value="26">26</option>
-										<option value="27">27</option>
-										<option value="28">28</option>
-										<option value="29">29</option>
-										<option value="30">30</option>
-										<option value="31">31</option>
-										<option value="32">32</option>
-										<option value="33">33</option>
-										<option value="34">34</option>
-										<option value="35">35</option>
-										<option value="36">36</option>
-										<option value="37">37</option>
-										<option value="38">38</option>
-										<option value="39">39</option>
-										<option value="40">40</option>
-										<option value="41">41</option>
-										<option value="42">42</option>
-										<option value="43">43</option>
-										<option value="44">44</option>
-										<option value="45">45</option>
-										<option value="46">46</option>
-										<option value="47">47</option>
-										<option value="48">48</option>
-										<option value="49">49</option>
-										<option value="50">50</option>
-										<option value="51">51</option>
-										<option value="52">52</option>
-										<option value="53">53</option>
-										<option value="54">54</option>
-										<option value="55">55</option>
-										<option value="56">56</option>
-										<option value="57">57</option>
-										<option value="58">58</option>
-										<option value="59">59</option>
-										<option value="50">50</option>
-										<option value="61">61</option>
-										<option value="62">62</option>
-										<option value="63">63</option>
-										<option value="64">64</option>
-										<option value="65">65</option>
-										<option value="66">66</option>
-										<option value="67">67</option>
-										<option value="68">68</option>
-										<option value="69">69</option>
-										<option value="70">70</option>
-										<option value="71">71</option>
-										<option value="72">72</option>
-										<option value="73">73</option>
-										<option value="74">74</option>
-										<option value="75">75</option>
-										<option value="76">76</option>
-										<option value="77">77</option>
-										<option value="78">78</option>
-										<option value="79">79</option>
-										<option value="80">80</option>
-										<option value="81">81</option>
-										<option value="82">82</option>
-										<option value="83">83</option>
-										<option value="84">84</option>
-										<option value="85">85</option>
-										<option value="86">86</option>
-										<option value="87">87</option>
-										<option value="88">88</option>
-										<option value="89">89</option>
-										<option value="90">90</option>
-										<option value="91">91</option>
-										<option value="92">92</option>
-										<option value="93">93</option>
-										<option value="94">94</option>
-										<option value="95">95</option>
-										<option value="96">96</option>
-										<option value="97">97</option>
-										<option value="98">98</option>
-										<option value="99">99</option>
-										<option value="100">100</option>
+
 									</select>
 								</div>
 							</div>
@@ -859,21 +760,15 @@ setlocale(
 	<!-- Checkout Modal end -->
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="js/jquery-1.11.0.min.js"></script>
+	<script src="/js/jquery-1.11.0.min.js"></script>
 
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+	<script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
-	<script src="js/jquery.autocomplete.min.js"></script>
-	<script src="js/jquery.placeholder.js"></script>
-	<script src="js/locations-autocomplete.js"></script>
-	<script src="js/bootstrap-datepicker.js"></script>
-	<script src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
-	<script src="js/gmap3.min.js"></script>
-
+	<script src="/js/jquery.placeholder.js"></script>
 	<!--[if !(gte IE 8)]><!-->
-	<script src="js/wow.min.js"></script>
+	<script src="/js/wow.min.js"></script>
 	<script>
 		// Initialize WOW
 		//-------------------------------------------------------------
@@ -883,9 +778,10 @@ setlocale(
 	</script>
 	<!--<![endif]-->
 
-	<script src="js/custom.js"></script>
-
+	<script src="/js/custom.js"></script>
+	<script src="/js/jquery.matchHeight.js"></script>
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	<script src="https://kit.fontawesome.com/121652c01a.js" crossorigin="anonymous"></script>
 
 
 	// disabled days datepicker
@@ -1012,7 +908,7 @@ setlocale(
 			document.getElementById("dayNumber").value = dates;
 		});
 
-		$("#datepicker2, #startTime, #endTime").change(function() {
+		$("#datepicker2, #datepicker, #startTime, #endTime, #cartype").change(function() {
 			var cartype = $("#cartype").val();
 			var start = $("#datepicker").val();
 			var startTime = $("#startTime").val();

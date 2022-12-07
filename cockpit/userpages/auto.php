@@ -353,7 +353,7 @@ require_once($develop . '/include/CustomPages/CustomPages.class.php');
     if (isset($_FILES["carimage"]["name"]) && $_FILES["carimage"]["name"] != '') {
 
         $targetWidth = 0;
-        $targetHeight = 600;
+        $targetHeight = 415;
 
         $path = "../upload/cars/";
         upload("carimage", $path, $targetWidth, $targetHeight);

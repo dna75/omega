@@ -9,6 +9,8 @@ function get_tree($prefix = '01', $level = 6)
 	if ($user->check_right('links'))			$options[] = '<li class="sub-menu"><a href="index.php?page=algemeen"><i class="fa fa-link"></i>Algemene gegevens</a></li>';
 	if ($user->check_right('links'))			$options[] = '<li class="sub-menu"><a href="index.php?page=slides"><i class="fa fa-link"></i>Slider voorpagina beheer</a></li>';
 	if ($user->check_right('links'))			$options[] = '<li class="sub-menu"><a href="index.php?page=auto"><i class="fa fa-link"></i>Auto beheer</a></li>';
+	if ($user->check_right('links'))			$options[] = '<li class="sub-menu"><a href="index.php?page=reserveren"><i class="fa fa-link"></i>Reserveringen beheer</a></li>';
+	if ($user->check_right('links'))			$options[] = '<li class="sub-menu"><a href="index.php?page=usp"><i class="fa fa-link"></i>USP beheer</a></li>';
 	// if ($user->check_right('links'))			$options[] = '<li class="sub-menu"><a href="index.php?page=reviews"><i class="fa fa-link"></i>Review beheer</a></li>';
 	// if ($user->check_right('links'))			$options[] = '<li class="sub-menu"><a href="index.php?page=galleries"><i class="fa fa-link"></i>Fotoalbums</a></li>';
 	// if ($user->check_right('links'))			$options[] = '<li class="sub-menu"><a href="index.php?page=menukaart"><i class="fa fa-link"></i>Menukaart beheer</a></li>';

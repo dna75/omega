@@ -1,0 +1,28 @@
+AddDefaultCharset UTF-8
+
+# ModPagespeed off
+
+Header set X-XSS-Protection "1; mode=block"
+Header set Referrer-Policy "no-referrer-when-downgrade"
+Header set Strict-Transport-Security "max-age=31536000"
+Header unset X-Powered-By
+ServerSignature Off
+
+Options +FollowSymLinks
+RewriteEngine on
+
+RewriteRule ^(cockpit) - [L]
+
+RewriteRule ^(pages/*|includes/*) - [F,L,NC]
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+
+RewriteRule ^Account/([^\.]+)/([^\.]+)/([^\.]+)$ /del.php?id=Account&fase=$1&userid=$2&code=$3 [L]
+RewriteRule ^Account/([^\.]+)$ /del.php?id=Account&fase=$1 [L]
+# RewriteRule ^Home/([^\.]+)/([^\.]+)$ /index-test.php?id=Home&order_id=$1/payment=$1 [L]
+# RewriteRule ^Home/([^\.]+)/([^\.]+)$ /index-test.php?id=Home&order_id=$1&session=$2 [L]
+# RewriteRule ^Home/([^\.]+)$ /index-test.php?id=Home&order_id=$1 [L]
+# RewriteRule ^([^\.]+)/([^\.]+)/([^\.]+)$ /index-test.php?id=$1&sub=$2&oid=$3 [L]
+RewriteRule ^([^\.]+)/([^\.]+)/([^\.]+)$ /del.php?id=$1&sub=$2&stat=$3 [L]
+RewriteRule ^([^\.]+)/([^\.]+)$ /del.php?id=$1&sub=$2 [L]
+RewriteRule ^([^\.]+)$ /del.php?id=$1 [L]

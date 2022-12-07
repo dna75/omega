@@ -47,4 +47,3 @@ $link = "http://" . $_SERVER['SERVER_NAME']."";
 $id = (isset($_GET['id'])) ? intval($_GET['id']) : '';
 $script = (isset($_GET['script'])) ? $_GET['script'] : '';
 $menu = (isset($_GET['menu'])) ? $_GET['menu'] : '';
-?>

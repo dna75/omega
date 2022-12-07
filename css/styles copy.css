@@ -19,8 +19,16 @@ body {
 }
 
 .cars {
-	height: 600px;
+	height: 415px;
 	object-fit: cover;
+}
+
+.shortText {
+	--max-lines: 5;
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: var(--max-lines);
 }
 
 /* Animation Delay
@@ -858,7 +866,7 @@ header .header-info .language-switch .dropdown-menu li img {
 #services .service-box .service-title {
 	margin: 0;
 	padding: 0;
-	font-size: 30px;
+	font-size: 24px;
 	font-weight: 600;
 	padding-top: 5px;
 }
@@ -970,14 +978,14 @@ header .header-info .language-switch .dropdown-menu li img {
 /* Vehicles
 --------------------------------------------*/
 #vehicles {
-	margin-top: 90px;
+	margin-top: 60px;
 	position: relative;
 	z-index: 2;
 }
 #vehicles .title {
 	font-size: 36px;
 	font-weight: 600;
-	margin-bottom: 65px;
+	margin-bottom: 35px;
 }
 #vehicles .subtitle {
 	font-weight: normal;
@@ -1805,7 +1813,7 @@ footer .footer-nav li a {
 	/* Services
 	--------------------------------------------*/
 	#services h2 {
-		font-size: 42px;
+		font-size: 32px;
 		margin: 0 0 20px 0;
 	}
 	#services .service-box .service-icon {

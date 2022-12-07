@@ -3,7 +3,7 @@ defined('SPINNERZ_INDEX') or die('Access denied.');
 
 $user->check_right('page', true);
 
-require_once($develop.'/include/CustomPages/CustomPages.class.php');
+require_once($develop . '/include/CustomPages/CustomPages.class.php');
 
 
 /**
@@ -47,27 +47,21 @@ require_once($develop.'/include/CustomPages/CustomPages.class.php');
  *						- 
  **/
 
-$pageName 	= 'pages'; 
+$pageName 	= 'pages';
 
 $fields 	= array(
-	'pagina' 				=> array('Pagina titel'					, 'text'		, 'multilingual','','De wordt als titel in de browser getoond (niet in de website)'),
-	'menu_title'			=> array('Menu titel'					, 'text'		, 'hide_overview multilingual', '', 'De menu titel wordt binnen de site in het menu getoond'),
-	'menu_subtitle'			=> array('Pagina sub-titel'			, 'text'		, 'hide_overview multilingual', '', 'De sub-titel wordt binnen elk pagina segment onder de hoofdtitel getoond'),
-	'black'					=> array('Achtergrond zwart'			, 'boolean'		, 'hide_overview', '', 'Bij deze keuze wordt de achtergrond zwart'), 	
-	'picture'		 		=> array('Afbeelding bovenaan de pagina', 'image'		, 'remove_orig hide_overview min_width=1600 min_height=800 max_width=1600 max_height=800 aspect_ratio'),
+	'pagina' 				=> array('Pagina titel', 'text', 'multilingual', '', 'De wordt als titel in de browser getoond (niet in de website)'),
+	'menu_title'			=> array('Menu titel', 'text', 'hide_overview multilingual', '', 'De menu titel wordt binnen de site in het menu getoond'),
+	'menu_subtitle'			=> array('Pagina sub-titel', 'text', 'hide_overview multilingual', '', 'De sub-titel wordt binnen elk pagina segment onder de hoofdtitel getoond'),
+	// 'picture'		 		=> array('Afbeelding bovenaan de pagina', 'image'		, 'remove_orig hide_overview min_width=1600 min_height=800 max_width=1600 max_height=800 aspect_ratio'),
 
-	'pagina_omschrijving'	=> array('Pagina omschrijving'			, 'text'		, 'hide_overview multilingual', '', 'Kernachtige omschrijving van de pagina voor Google zoekresultaten (gebruik hier bijvoorbeeld de eerste zin uit de tekst van de pagina)'),
-	'keywords'				=> array('Keywords'						, 'text'		, 'hide_overview multilingual', '', 'De belangrijkste woorden waarop je in Google gevonden wil worden. Let op: alleen losse worden, gescheiden door een komma'),
-
-	'hide'					=> array('Pagina deactiveren'			, 'boolean'		, 'hide_overview', '', 'Pagina op inactief zetten, de inhoud wordt niet getoond op de website'),
-	'foodSection'			=> array('Toon in Eten en Drinken'		, 'boolean'		, 'hide_overview','','Link van deze pagina onderaan in de footer'),
-	'menuactive'			=> array('Menukaarten insluiten'		, 'boolean'		, 'hide_overview','','Toon de verschillende menukaarten binnen deze pagina'),
-	'arrangementactive'		=> array('Arrangementen insluiten'		, 'boolean'		, 'hide_overview','','Toon de verschillende arrangementen en buffetten binnen deze pagina'),
-	'externepagina'			=> array('Externe pagina'				, 'text'		, 'hide_overview'),	
-	'inhoud'				=> array('Inhoud pagina'				, 'textarea'	, 'hide_overview hidden_parent multilingual')
+	'pagina_omschrijving'	=> array('Pagina omschrijving', 'text', 'hide_overview multilingual', '', 'Kernachtige omschrijving van de pagina voor Google zoekresultaten (gebruik hier bijvoorbeeld de eerste zin uit de tekst van de pagina)'),
+	'keywords'				=> array('Keywords', 'text', 'hide_overview multilingual', '', 'De belangrijkste woorden waarop je in Google gevonden wil worden. Let op: alleen losse worden, gescheiden door een komma'),
+	'externepagina'			=> array('Externe pagina', 'text', 'hide_overview'),
+	'inhoud'				=> array('Inhoud pagina', 'textarea', 'hide_overview hidden_parent multilingual')
 );
 
 $maxLevels 	= 2; 		// HET MAXIMAAL AANTAL LEVELS VAN DE PAGINA-STRUCTUUR
 $levels		= TRUE;		// BIJ PAGINA BEHEER MOET DEZE OP TRUE STAAN, ANDERS OP FALSE OF LEEG
 $page = new CustomPages($pageName, $fields, 1, $levels, $maxLevels, $user);
-$page->showPage(true);            
+$page->showPage(true);

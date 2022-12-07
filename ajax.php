@@ -103,49 +103,52 @@ $daysNoWeekend = array_diff($days, $weekend);
 ?>
 <?php
 
-if ($totalRentalDays >= 1) {
-    echo ' € ';
-}
+if (isset($_GET['cartype']) && $_GET['cartype'] != '') {
 
-if ($totalRentalDays == 0) {
-}
+    if ($totalRentalDays >= 1) {
+        echo ' € ';
+    }
 
-if ($totalRentalDays >= 1 && $totalRentalDays <= 6) {
+    if ($totalRentalDays == 0) {
+    }
 
-    // if array contains days 0 and 6
-    if (in_array(0, $dayNumbers) && in_array(6, $dayNumbers)) {
+    if ($totalRentalDays >= 1 && $totalRentalDays <= 6) {
 
-        $weekend = array_intersect($dayNumbers, array(0, 6));
-        $totalPriceWeekend = count($weekend) * $weekendPrice;
-        // print_r($weekend);
+        // if array contains days 0 and 6
+        if (in_array(0, $dayNumbers) && in_array(6, $dayNumbers)) {
 
-        $daysNoWeekend = array_diff($dayNumbers, $weekend);
-        $totalPriceDays = count($daysNoWeekend) * $dayPrice;
+            $weekend = array_intersect($dayNumbers, array(0, 6));
+            $totalPriceWeekend = count($weekend) * $weekendPrice;
+            // print_r($weekend);
 
-        $total = $totalPriceWeekend + $totalPriceDays;
-        echo number_format($total, 2, ',', '');
-    } else {
-        $total = $totalRentalDays * $dayPrice;
+            $daysNoWeekend = array_diff($dayNumbers, $weekend);
+            $totalPriceDays = count($daysNoWeekend) * $dayPrice;
+
+            $total = $totalPriceWeekend + $totalPriceDays;
+            echo number_format($total, 2, ',', '');
+        } else {
+            $total = $totalRentalDays * $dayPrice;
+            echo number_format($total, 2, ',', '');
+        }
+    }
+    if ($totalRentalDays >= 7 && $totalRentalDays <= 29) {
+        $total = $totalRentalDays * $weekPrice;
         echo number_format($total, 2, ',', '');
     }
-}
-if ($totalRentalDays >= 7 && $totalRentalDays <= 29) {
-    $total = $totalRentalDays * $weekPrice;
-    echo number_format($total, 2, ',', '');
-}
-if ($totalRentalDays >= 30) {
-    $total = $totalRentalDays * $monthPrice;
-    echo number_format($total, 2, ',', '') . ' (' . $totalRentalDays . ')';;
-}
+    if ($totalRentalDays >= 30) {
+        $total = $totalRentalDays * $monthPrice;
+        echo number_format($total, 2, ',', '') . ' (' . $totalRentalDays . ')';;
+    }
 
-if ($totalRentalDays == 1) {
-    $days = 'dag';
-} else {
-    $days = 'dagen';
-}
+    if ($totalRentalDays == 1) {
+        $days = 'dag';
+    } else {
+        $days = 'dagen';
+    }
 
-if ($totalRentalDays >= 1) {
-    echo  ' (' . $totalRentalDays . ' ' . $days . ')';
-    echo '<div class="d-grid mt-2"><a href="#" class="btn btn-lg btn-success rounded-0">RESERVEER NU</a></div>';
+    if ($totalRentalDays >= 1) {
+        echo  ' (' . $totalRentalDays . ' ' . $days . ')';
+        echo '<div class="d-grid mt-2"><a href="#" class="btn btn-lg btn-success rounded-0">RESERVEER NU</a></div>';
+    }
 }
 ?>
