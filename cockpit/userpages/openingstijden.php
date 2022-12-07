@@ -59,9 +59,9 @@ $fields     = array(
     'mondaytofridayfrom'             => array('Maandag t/m vrijdag vanaf', 'time', ''),
     'mondaytofridayto'             => array('Maandag t/m vrijdag tot', 'time', ''),
     'saturdayfrom'                      => array('Zaterdag vanaf', 'time', ''),
-    'saturdayclosed'        => array('Zaterdag gesloten', 'boolean', 'hide_overview'),
     'saturdayto'             => array('Zondag tot', 'time', ''),
-    'sundayfrom'                      => array('Zaterdag vanaf', 'time', ''),
+    'saturdayclosed'        => array('Zaterdag gesloten', 'boolean', 'hide_overview'),
+    'sundayfrom'            => array('Zondag vanaf', 'time', ''),
     'sundayto'             => array('Zondag tot', 'time', ''),
     'sundayclosed'        => array('Zondag gesloten', 'boolean', 'hide_overview'),
 
@@ -75,10 +75,10 @@ $config  = array(
     'maxLevels'     => 1,
     'user'             => null,
     'facebook'        => false,
-    'add_items'        => true,
-    'delete_items'    => true,
+    'add_items'        => false,
+    'delete_items'    => false,
     'edit_items'    => true,
-    'order_select'    => true,
+    'order_select'    => false,
     // Custom Button
     /*
     'buttons'        => array(
@@ -90,7 +90,7 @@ $config  = array(
 );
 
 $page = new CustomPages($pageName, $fields, $config);
-$page->copy_items     = true;
+$page->copy_items     = false;
 //$page->showPage(true);
 //$page->showPage(true, 'name', true);           // Dit zal orderen op name (want orderfield = 'name') en deze omdraaien (want reverse  = true)
 $page->showPage(true, 'date_to', true);          // Dit zal orderen op date_to (want orderfield = 'date_to') en deze niet omdraaien (want reverse  = false)
