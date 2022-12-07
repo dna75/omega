@@ -574,9 +574,17 @@ setlocale(
 					</p>
 
 					<p class="contact-info"><span class=" highlight">Openingstijden kantoor:</span>
-						<br>Maandag t/m vrijdag: 08:00 - 17:00
-						<br>Zaterdag: 08:00 - 12:00
-						<br>Zondag: Gesloten
+						<?
+						$items = new CustomPages('opningstijden');
+						$items->fetchOne(66); // je kan ook een id ophalen met: $items->fetchOne(87);
+
+						$item = $items->getResults();
+
+						if (!empty($item)) { ?>
+							<br>Maandag t/m vrijdag: <?= $item['mondaytofridayfrom']; ?> - <?= $item['mondaytofridayto']; ?>
+							<br>Zaterdag: <?= $item['saturdayfrom']; ?> - <?= $item['saturdayto']; ?>
+							<br>Zondag: <?= (!empty($item['sundayclosed'])) ? $item['sundayfrom'] . ' - ' . $item['sundayto'] : 'Gesloten'; ?>
+						<? } ?>
 				</div>
 			</div>
 		</div>
